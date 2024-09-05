@@ -1,0 +1,100 @@
+# By submitting this assignment, I agree to the following:
+# "Aggies do not lie, cheat, or steal, or tolerate those who do"
+# "I have not given or received any unauthorized aid on this assignment."
+#
+# Names: Nivriti Eadala
+# Robin El Attar
+# Nithya Vemuri
+# Mirthvika Srinivasan
+# Section: 505
+# Assignment: 4.16 LAB: Pretty equation
+# Date: 4 September 2024
+# 
+import math
+
+
+#inputting coefficients A, B, and C  
+coeff_a = int(input('Please enter the coefficient A: '))
+coeff_b = int(input('Please enter the coefficient B: '))
+coeff_c = int(input('Please enter the coefficient C: '))
+coeff_a_update = ""
+coeff_b_update = ""
+coeff_c_update = ""
+quad_eq_a = "1"
+quad_eq_b = "1"
+quad_eq_c = "1"
+quad_eq_final = "1"
+
+
+#checking value of A (for negative #, value of 1, or value of 0), then adding '+' at the end if neccesary
+if coeff_a == 0:
+    0 == 0
+elif math.fabs(coeff_a) == 1:
+    if(coeff_a == -1):
+        coeff_a_update = "- x^2"
+    else:
+        coeff_a_update = "x^2"
+elif coeff_a < 0:
+    coeff_a = int(math.fabs(coeff_a))
+    coeff_a_update = "- " + str(coeff_a) + "x^2"
+else:
+    coeff_a_update = str(coeff_a) + "x^2"
+    
+    
+if (coeff_a_update != "") and (coeff_b > 0):
+    coeff_a_update += " +"
+
+
+#checking value of B (for negative #, value of 1, or value of 0), then adding '+' at the end if neccesary
+if coeff_b == 0:
+    0 == 0
+elif math.fabs(coeff_b) == 1:
+    if(coeff_b == -1):
+        coeff_b_update = "- x"
+    else:
+        coeff_b_update = "x"
+elif coeff_b < 0:
+    coeff_b = int(math.fabs(coeff_b))
+    coeff_b_update = "- " + str(coeff_b) + "x"
+    
+else:
+    coeff_b_update = str(coeff_b) + "x"
+    
+if (coeff_b_update != "") and (coeff_c > 0):
+    coeff_b_update += " +"
+    
+    
+#checking value of C (for negative #, value of 1, or value of 0), then adding '+' at the end if neccesary
+if coeff_c == 0:
+    0 == 0
+elif math.fabs(coeff_c) == 1:
+    if(coeff_c == -1):
+        coeff_c_update = "- " + str(coeff_c)
+    else:
+        coeff_c_update = str(coeff_c)
+elif coeff_c < 0:
+    coeff_c = int(math.fabs(coeff_c))
+    coeff_c_update = "- " + str(coeff_c)
+    
+else:
+    coeff_c_update = str(coeff_c)
+
+
+#concatenating all values (A, B, and C) when applicable
+
+if coeff_a_update != "":
+    quad_eq_final = coeff_a_update
+    if coeff_b_update != "":
+        quad_eq_final += " " + coeff_b_update
+    if coeff_c_update != "":
+        quad_eq_final += " " + coeff_c_update
+elif coeff_b_update != "":
+    quad_eq_final = coeff_b_update
+    if coeff_c_update != "":
+        quad_eq_final += " " + coeff_c_update
+elif coeff_c_update != "":
+    quad_eq_final = coeff_c_update
+
+
+
+print("The quadratic equation is", quad_eq_final, "= 0")
